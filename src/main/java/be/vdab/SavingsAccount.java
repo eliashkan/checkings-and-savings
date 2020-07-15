@@ -1,5 +1,7 @@
 package be.vdab;
 
+import java.time.LocalDate;
+
 public class SavingsAccount extends Account {
 
     private CheckingsAccount checkingsAccount;
@@ -33,8 +35,20 @@ public class SavingsAccount extends Account {
         checkingsAccount.deposit(amount);
     }
 
-    public void addInterest() {
-        balance += balance * interestRate;
+    public void addInterest() throws NotJanuaryFirstException {
+        LocalDate now = LocalDate.now();
+
+        if (now.equals(
+                LocalDate.of(
+                        LocalDate.now().getYear(),
+                        1,
+                        1
+                )
+        )) {
+            balance += balance * interestRate;
+        } else {
+            throw new NotJanuaryFirstException();
+        }
     }
 }
 

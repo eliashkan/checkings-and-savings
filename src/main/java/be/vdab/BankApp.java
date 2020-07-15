@@ -1,7 +1,5 @@
 package be.vdab;
 
-import java.time.LocalDate;
-
 public class BankApp {
 
 
@@ -21,19 +19,13 @@ public class BankApp {
         try {
             ca.depositToSavings(500F);
         } catch (InsufficientFundsException e) {
-            e.printStackTrace();
+            System.out.println("not enough money");
         }
 
-        LocalDate now = LocalDate.now();
-
-        if (now.equals(
-                LocalDate.of(
-                        LocalDate.now().getYear(),
-                        1,
-                        1
-                )
-        )) {
+        try {
             ca.getSavingsAccount().addInterest();
+        } catch (NotJanuaryFirstException e) {
+            System.out.println("No interest for you my friend.");
         }
 
     }
