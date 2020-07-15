@@ -28,9 +28,14 @@ public class CheckingsAccount extends Account {
         this.savingsAccount = savingsAccount;
     }
 
-    @Override
-    public void withdraw(double amount) throws InsufficientFundsException {
+    public void withdraw(double amount, CheckingsAccount beneficiary) throws InsufficientFundsException {
         super.withdraw(amount);
+        beneficiary.deposit(amount);
+    }
+
+    public void depositToSavings(double amount) throws InsufficientFundsException {
+        withdraw(amount);
+        savingsAccount.deposit(amount);
     }
 
 }
