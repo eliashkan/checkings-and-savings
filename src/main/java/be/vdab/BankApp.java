@@ -12,6 +12,12 @@ public class BankApp {
         System.out.println("account number" + ca.getAccountNumber());
         System.out.println("Owner: " + ca.getOwner().getName());
 
+        try {
+            ca.depositToSavings(500F);
+        } catch (InsufficientFundsException e) {
+            e.printStackTrace();
+        }
+
     }
 
 

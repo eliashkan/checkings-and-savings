@@ -2,14 +2,14 @@ package be.vdab;
 
 public class CheckingsAccount extends Account {
 
-    SavingsAccount savingsAccount;
-    Person owner;
+    private SavingsAccount savingsAccount;
+    private Person owner;
 
     public CheckingsAccount(Person owner) {
         super();
         this.owner = owner;
         // savings aan vast hangen
-        savingsAccount = new SavingsAccount();
+        savingsAccount = new SavingsAccount().setCheckingsAccount(this);
     }
 
     public Person getOwner() {
