@@ -7,6 +7,10 @@ public abstract class Account {
     String accountNumber;
     double balance;
 
+    public Account() {
+        this.accountNumber = this.generateUniqueAccountNumber();
+    }
+
     double checkBalance() {
         return balance;
     }
@@ -35,7 +39,7 @@ public abstract class Account {
         }
     }
 
-    public String generateUniqueAccountNumber() {
+    private String generateUniqueAccountNumber() {
         return RandomStringUtils.randomAlphanumeric(16, 17);
     }
 
