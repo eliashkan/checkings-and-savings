@@ -1,5 +1,7 @@
 package be.vdab;
 
+import org.apache.commons.lang3.RandomStringUtils;
+
 public abstract class Account {
 
     String accountNumber;
@@ -34,7 +36,7 @@ public abstract class Account {
     }
 
     public String generateUniqueAccountNumber() {
-
+        return RandomStringUtils.randomAlphanumeric(16, 17);
     }
 
 }

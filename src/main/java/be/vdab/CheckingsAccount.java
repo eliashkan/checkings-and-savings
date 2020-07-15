@@ -6,7 +6,7 @@ public class CheckingsAccount extends Account {
 
     public CheckingsAccount(String accountNumber) {
         this.accountNumber = accountNumber;
-        this.savingsAccount = new SavingsAccount();
+        //this.savingsAccount = new SavingsAccount();
     }
 
     public SavingsAccount getSavingsAccount() {
