@@ -3,6 +3,21 @@ package be.vdab;
 public class SavingsAccount extends Account {
 
     private CheckingsAccount checkingsAccount;
+    private double interestRate;
+
+    public SavingsAccount(double interestRate) {
+        super();
+        this.interestRate = interestRate;
+    }
+
+    public double getInterestRate() {
+        return interestRate;
+    }
+
+    public SavingsAccount setInterestRate(double interestRate) {
+        this.interestRate = interestRate;
+        return this;
+    }
 
     public CheckingsAccount getCheckingsAccount() {
         return checkingsAccount;
@@ -13,12 +28,15 @@ public class SavingsAccount extends Account {
         return this;
     }
 
-    public SavingsAccount() {
-        super();
-    }
-
     public void depositToCheckings(double amount) throws InsufficientFundsException {
         this.withdraw(amount);
         checkingsAccount.deposit(amount);
     }
+
+    public void addInterest() {
+        balance += balance * interestRate;
+    }
 }
+
+// 3% -> 0.03
+// 0.3 -> 0.003

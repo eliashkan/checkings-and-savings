@@ -9,7 +9,7 @@ public class CheckingsAccount extends Account {
         super();
         this.owner = owner;
         // savings aan vast hangen
-        savingsAccount = new SavingsAccount().setCheckingsAccount(this);
+        savingsAccount = new SavingsAccount(generalInterestRate).setCheckingsAccount(this);
     }
 
     public Person getOwner() {

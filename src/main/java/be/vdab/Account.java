@@ -4,11 +4,29 @@ import org.apache.commons.lang3.RandomStringUtils;
 
 public abstract class Account {
 
+    static double generalInterestRate = 0.03;
     String accountNumber;
     double balance;
 
     public Account() {
         this.accountNumber = this.generateUniqueAccountNumber();
+    }
+
+    public static double getGeneralInterestRate() {
+        return generalInterestRate;
+    }
+
+    public static void setGeneralInterestRate(double generalInterestRate) {
+        Account.generalInterestRate = generalInterestRate;
+
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 
     double checkBalance() {
@@ -21,10 +39,6 @@ public abstract class Account {
 
     public void setAccountNumber(String accountNumber) {
         this.accountNumber = accountNumber;
-    }
-
-    public void setBalance(double balance) {
-        this.balance = balance;
     }
 
     public void deposit(double amount) {
