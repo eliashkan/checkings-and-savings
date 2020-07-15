@@ -17,7 +17,8 @@ public class SavingsAccount extends Account {
         super();
     }
 
-    public void depositToCheckings(){
-
+    public void depositToCheckings(double amount) throws InsufficientFundsException {
+        this.withdraw(amount);
+        checkingsAccount.deposit(amount);
     }
 }

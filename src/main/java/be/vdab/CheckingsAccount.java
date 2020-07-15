@@ -29,12 +29,12 @@ public class CheckingsAccount extends Account {
     }
 
     public void withdraw(double amount, CheckingsAccount beneficiary) throws InsufficientFundsException {
-        super.withdraw(amount);
+        withdraw(amount);
         beneficiary.deposit(amount);
     }
 
     public void depositToSavings(double amount) throws InsufficientFundsException {
-        withdraw(amount);
+        this.withdraw(amount);
         savingsAccount.deposit(amount);
     }
 
