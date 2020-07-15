@@ -9,6 +9,7 @@ public class CheckingsAccount extends Account {
         super();
         this.owner = owner;
         // savings aan vast hangen
+        savingsAccount = new SavingsAccount();
     }
 
     public Person getOwner() {
