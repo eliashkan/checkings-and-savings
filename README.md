@@ -11,4 +11,3 @@ Die definiëren we dus in de abstracte account klasse.
 Een savings account kan enkel bestaan als extensie van een checkings account. We geven de constructor van de checkings
  account een savings account mee. 
  We linken echter de checkings aan de savings en omgekeerd door ze als instance variabelen te definiëren in de twee klassen.
- 
